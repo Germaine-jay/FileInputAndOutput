@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace JasonAndText.JasonReadWrite
 {
-    internal class JasonRead
+    public class JasonRead
     {
+        public static void ReadJasonfile()
+        {
+
+        }
     }
 }

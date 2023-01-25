@@ -3,11 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33213.308
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileInputAndOutput", "FileInputAndOutput\FileInputAndOutput.csproj", "{3875C3F8-2DAE-4B61-91E8-1FB7882E82C8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FileInputAndOutput", "FileInputAndOutput\FileInputAndOutput.csproj", "{3875C3F8-2DAE-4B61-91E8-1FB7882E82C8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JasonAndText", "JasonAndText\JasonAndText.csproj", "{21D73769-B2E7-434C-AE25-2928ACB1EF5F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JasonAndText", "JasonAndText\JasonAndText.csproj", "{21D73769-B2E7-434C-AE25-2928ACB1EF5F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomAttribute", "CustomAttribute\CustomAttribute.csproj", "{4B5AFF00-3F19-450A-A47E-0DDA6E53B3A0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CustomAttribute", "CustomAttribute\CustomAttribute.csproj", "{4B5AFF00-3F19-450A-A47E-0DDA6E53B3A0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataStrore", "DataStrore\DataStrore.csproj", "{9F205CBC-C697-4D25-970E-ED20987983A5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{4B5AFF00-3F19-450A-A47E-0DDA6E53B3A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4B5AFF00-3F19-450A-A47E-0DDA6E53B3A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4B5AFF00-3F19-450A-A47E-0DDA6E53B3A0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9F205CBC-C697-4D25-970E-ED20987983A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9F205CBC-C697-4D25-970E-ED20987983A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9F205CBC-C697-4D25-970E-ED20987983A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9F205CBC-C697-4D25-970E-ED20987983A5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

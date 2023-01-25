@@ -9,6 +9,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\CustomAttribute\CustomAttribute.csproj" />
+    <ProjectReference Include="..\DataStrore\DataStrore.csproj" />
     <ProjectReference Include="..\JasonAndText\JasonAndText.csproj" />
   </ItemGroup>
 
