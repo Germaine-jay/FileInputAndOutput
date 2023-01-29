@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using JasonAndText.TextReadWrite;
 using JasonAndText.JasonReadWrite;
+using CustomAttribute;
 
 namespace FileInputAndOutput
 {
@@ -13,6 +14,7 @@ namespace FileInputAndOutput
     {
         public static void StartApp()
         {
+
             bool Validate = true;
             while (Validate)
             {
@@ -34,7 +36,7 @@ namespace FileInputAndOutput
 
                     case "3":
                         Console.Clear();
-                        JasonWrite.ReadJasonfile();
+                        JasonWrite.WriteJasonfile();
                         break;
 
                     case "4":
@@ -60,6 +62,7 @@ namespace FileInputAndOutput
                 else if (repeatChoice == "y")
                 {
                     Validate = true;
+                    Console.Clear();
                     StartApp();
                 }
             }        

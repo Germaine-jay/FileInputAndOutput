@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using CustomAttribute;
+﻿using CustomAttribute;
 
 namespace JasonAndText.TextReadWrite
 {
@@ -11,11 +6,26 @@ namespace JasonAndText.TextReadWrite
     {
         public static void CreateText()
         {
-            using (StreamWriter fs1 = File.CreateText(@"AttributeText.txt"))
+            Console.WriteLine("Enter file name");
+            var Filename = Console.ReadLine();
+
+            if (!string.IsNullOrEmpty(Filename))
+            {
+                string filepath = @$"{Filename}.txt";
+
+                if (File.Exists(filepath)) File.Delete(filepath);
+
+                using (StreamWriter fs1 = File.CreateText(filepath))
                 {
                     fs1.WriteLine(CustomDocumentation.Builder);
                 }
-            Console.WriteLine("Text File Succefully Created");
+            }
+            else
+            {
+                Console.WriteLine(" File name cannot be empty");
+                CreateText();
+            }
+
         }
     }
 }

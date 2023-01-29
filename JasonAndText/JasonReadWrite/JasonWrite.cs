@@ -1,20 +1,41 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿
 using System.Text.Json;
-using System.Threading.Tasks;
+using System.Text.Json.Serialization;
+using CustomAttribute;
 using DataStore;
 
 namespace JasonAndText.JasonReadWrite
 {
+
     public class JasonWrite
     {
-        public static void ReadJasonfile()
+        private static readonly JsonSerializerOptions _options =
+            new() { DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull };
+        
+        public static void WriteJasonfile()
         {
+            Console.WriteLine("Enter file name");
+            var CreateFile = Console.ReadLine();
 
+            if (!string.IsNullOrEmpty(CreateFile))
+            {
+                var fileName = @$"{CreateFile}.json";
+                if (File.Exists(fileName)) File.Delete(fileName);
+
+                var options = new JsonSerializerOptions(_options) { WriteIndented = true };
+                string jsonString = JsonSerializer.Serialize(CustomDocumentation2.responses, options);
+
+                //File.WriteAllText(fileName, jsonString);
+                Console.WriteLine(jsonString);
+                Console.WriteLine("Json file created successfully");
+            }
+            else
+            {
+                Console.WriteLine(" File name cannot be empty");
+                WriteJasonfile();
+            }
         }
     }
 
-   
+
 }

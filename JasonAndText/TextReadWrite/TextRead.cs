@@ -10,10 +10,22 @@ namespace JasonAndText.TextReadWrite
     {
         public static void ReadTextFile()
         {
-            string filepath = @"AttributeText.txt";
-            foreach (string task in File.ReadAllLines(filepath))
+            Console.WriteLine("Enter file name");
+            var Filename = Console.ReadLine();
+
+            string filepath = @$"{Filename}.txt";
+            if (!string.IsNullOrEmpty(Filename) && File.Exists(filepath))
+            { 
+                foreach (string task in File.ReadAllLines(filepath))
+                {
+                    Console.WriteLine(task);
+                }
+            }
+            else
             {
-                Console.WriteLine(task);
+                Console.WriteLine("File does not exist, try again\n");
+               
+                ReadTextFile();
             }
         }
 }

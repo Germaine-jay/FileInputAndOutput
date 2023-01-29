@@ -7,6 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\CustomAttribute\CustomAttribute.csproj" />
     <ProjectReference Include="..\DataStrore\DataStrore.csproj" />
   </ItemGroup>
 
