@@ -1,12 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using JasonAndText.JasonReadWrite;
 using JasonAndText.TextReadWrite;
-using JasonAndText.JasonReadWrite;
-using CustomAttribute;
 
 namespace FileInputAndOutput
 {
@@ -21,7 +14,7 @@ namespace FileInputAndOutput
                 Console.WriteLine("Enter: \n 1 -> Create Text file\n 2 -> Read Text file\n 3 -> Create Jason File\n 4 -> Read Jason File");
                 var Option = Console.ReadLine();
                 Console.WriteLine();
-                
+
                 switch (Option)
                 {
                     case "1":
@@ -44,11 +37,11 @@ namespace FileInputAndOutput
                         JasonRead.ReadJasonfile();
                         break;
 
-                   default:
+                    default:
                         Console.Clear();
                         Console.WriteLine("Invalid Option");
-                            StartApp();
-                            break;
+                        StartApp();
+                        break;
                 }
 
                 Console.Write("\n\t Do you want to carry out another operation? (y/n) \n\t ");
@@ -65,7 +58,7 @@ namespace FileInputAndOutput
                     Console.Clear();
                     StartApp();
                 }
-            }        
+            }
         }
     }
 }

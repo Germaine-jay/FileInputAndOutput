@@ -10,8 +10,7 @@ namespace JasonAndText.JasonReadWrite
     public class JasonWrite
     {
         private static readonly JsonSerializerOptions _options =
-            new() { DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull };
-        
+            new() { DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull };      
         public static void WriteJasonfile()
         {
             Console.WriteLine("Enter file name");
@@ -25,8 +24,7 @@ namespace JasonAndText.JasonReadWrite
                 var options = new JsonSerializerOptions(_options) { WriteIndented = true };
                 string jsonString = JsonSerializer.Serialize(CustomDocumentation2.responses, options);
 
-                //File.WriteAllText(fileName, jsonString);
-                Console.WriteLine(jsonString);
+                File.WriteAllText(fileName, jsonString);
                 Console.WriteLine("Json file created successfully");
             }
             else

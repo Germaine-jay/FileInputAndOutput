@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Text.Json;
-using System.Threading.Tasks;
-
-namespace JasonAndText.JasonReadWrite
+﻿namespace JasonAndText.JasonReadWrite
 {
     public class JasonRead
     {
@@ -17,16 +10,15 @@ namespace JasonAndText.JasonReadWrite
             string filepath = @$"{Filename}.json";
             if (!string.IsNullOrEmpty(Filename) && File.Exists(filepath))
             {
-                using (StreamReader r = new StreamReader(filepath))
+                using (StreamReader read = new StreamReader(filepath))
                 {
-                    string json = r.ReadToEnd();
+                    string json = read.ReadToEnd();
                     Console.WriteLine(json);
                 }
             }
-            else
-            {
-                Console.WriteLine("File does not exist");
-            }
+
+            Console.WriteLine("File does not exist");
+
         }
     }
 }

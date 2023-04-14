@@ -83,39 +83,21 @@ namespace CustomAttribute
         {
             if (type.IsEnum)
             {
-                //var namez = type.GetEnumNames();
-          
-                var enumtype = type.GetEnumValues();
-
                 var names = type.GetEnumNames();
 
                 foreach (var name in names)
                 {                  
                     var attrenum = (DocumentAttribute)type.GetCustomAttribute(typeof(DocumentAttribute));
-                    var enumfield = (DocumentAttribute)type.GetField(name.ToString()).GetCustomAttribute(typeof(DocumentAttribute));
 
                     if (attrenum != null)
                     {
                         response.Enums = new()
                         {
                             Name = type.Name, 
-                            Description = attrenum.Description,
-                            Input = new[] { names[1] }
-                            
+                            Description = attrenum.Description,                    
                         };
                     }
                 }
-
-               /* var type = typeof(Role);
-                var data = Enum
-                    .GetNames(type)
-                    .Select(name => new
-                    {
-                        Id = (int)Enum.Parse(type, name),
-                        Name = name
-                    })
-                    .ToArray();*/
-
             }
         }
     }
