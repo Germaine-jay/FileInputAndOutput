@@ -1,16 +1,14 @@
 ﻿
+using CustomAttribute;
 using System.Text.Json;
 using System.Text.Json.Serialization;
-using CustomAttribute;
-using DataStore;
 
 namespace JasonAndText.JasonReadWrite
 {
 
     public class JasonWrite
     {
-        private static readonly JsonSerializerOptions _options =
-            new() { DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull };      
+        private static readonly JsonSerializerOptions _options = new() { DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull };
         public static void WriteJasonfile()
         {
             Console.WriteLine("Enter file name");
@@ -27,11 +25,10 @@ namespace JasonAndText.JasonReadWrite
                 File.WriteAllText(fileName, jsonString);
                 Console.WriteLine("Json file created successfully");
             }
-            else
-            {
-                Console.WriteLine(" File name cannot be empty");
-                WriteJasonfile();
-            }
+
+            Console.WriteLine(" File name cannot be empty");
+            WriteJasonfile();
+
         }
     }
 

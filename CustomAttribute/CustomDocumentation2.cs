@@ -26,7 +26,7 @@ namespace CustomAttribute
             MethodInfo[] methods = type.GetMethods();
             foreach (MethodInfo method in methods)
             {
-                var attrMethod = (DocumentAttribute)method.GetCustomAttribute(typeof(DocumentAttribute));
+                var attrMethod = (DocumentAttribute?)method.GetCustomAttribute(typeof(DocumentAttribute));
 
                 if (attrMethod != null)
                 {
@@ -47,7 +47,7 @@ namespace CustomAttribute
             PropertyInfo[] properties = type.GetProperties();
             foreach (PropertyInfo property in properties)
             {
-                var attrProperty = (DocumentAttribute)property.GetCustomAttribute(typeof(DocumentAttribute));
+                var attrProperty = (DocumentAttribute?)property.GetCustomAttribute(typeof(DocumentAttribute));
 
                 if (attrProperty != null)
                 {
@@ -66,7 +66,7 @@ namespace CustomAttribute
             ConstructorInfo[] constructorInfo = type.GetConstructors();
             foreach (ConstructorInfo constructor in constructorInfo)
             {
-                var attrConstructor = (DocumentAttribute)constructor.GetCustomAttribute(typeof(DocumentAttribute));
+                var attrConstructor = (DocumentAttribute?)constructor.GetCustomAttribute(typeof(DocumentAttribute));
 
                 if (attrConstructor != null)
                 {
@@ -87,7 +87,7 @@ namespace CustomAttribute
 
                 foreach (var name in names)
                 {                  
-                    var attrenum = (DocumentAttribute)type.GetCustomAttribute(typeof(DocumentAttribute));
+                    var attrenum = (DocumentAttribute?)type.GetCustomAttribute(typeof(DocumentAttribute));
 
                     if (attrenum != null)
                     {
@@ -112,12 +112,12 @@ namespace CustomAttribute
 
             foreach (Type t in types)
             {
-                CustomDocumentation2.GetClass(t);
-                CustomDocumentation2.GetMethod(t);
-                CustomDocumentation2.GetProperty(t);
+                GetClass(t);
+                GetMethod(t);
+                GetProperty(t);
 
-                CustomDocumentation2.GetConstructor(t);
-                CustomDocumentation2.GetEnum(enums);
+                GetConstructor(t);
+                GetEnum(enums);
 
 
                 if (!string.IsNullOrEmpty(response.Name))
